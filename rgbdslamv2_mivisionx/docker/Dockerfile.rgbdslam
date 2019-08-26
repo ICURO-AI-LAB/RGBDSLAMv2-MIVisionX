@@ -108,12 +108,17 @@ RUN /bin/bash -c " \
    echo \"bind k select-pane -U\" >> ~/.tmux.conf; \
    echo \"bind l select-pane -R\" >> ~/.tmux.conf; \
    echo \"export LANG=\"en_US.UTF-8\"\" >> ~/.bashrc; \
-   echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
-   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_background\" --type bool false; \
-   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_colors\" --type bool false; \
-   gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string \"#FFFFFF\"; \
-   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/background_color\" --type string \"#230A30\""
-
+echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
+   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ use-theme-colors false\" >> ~/.bashrc; \
+   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ background-color 'rgb(35,10,48)'\" >> ~/.bashrc; \
+   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ foreground-color 'rgb(255,255,255)'\" >> ~/.bashrc"
+  # Use this to get the Profile ID: gsettings get org.gnome.Terminal.ProfilesList default
+  # This works for Ubuntu 16.04
+  # echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
+  # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_background\" --type bool false; \
+  # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_colors\" --type bool false; \
+  # gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string \"#FFFFFF\"; \
+  # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/background_color\" --type string \"#230A30\""
 ############################################################
 ##################### Install ROS ##########################
 ############################################################
@@ -121,7 +126,7 @@ RUN /bin/bash -c " \
 RUN sudo /bin/bash -c " \
    # Install ROS
       sudo echo \"deb http://packages.ros.org/ros/ubuntu xenial main\" >> /etc/apt/sources.list.d/ros-latest.list; \
-      sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116; \
+      sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654; \
       sudo apt-get update; \
       sudo apt-get install -y ros-kinetic-desktop-full; \
       echo \"export QT_X11_NOMITSHM=1\" >> ~/.bashrc"
@@ -165,7 +170,7 @@ RUN sudo /bin/bash -c " \
        mkdir build; \
        cd build; \
        cmake ../; \
-       make -j1; \
+       make -j24; \
        sudo make install; \
        sudo ldconfig"
 
