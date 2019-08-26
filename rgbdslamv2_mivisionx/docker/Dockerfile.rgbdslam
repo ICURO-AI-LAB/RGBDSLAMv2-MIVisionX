@@ -245,3 +245,16 @@ RUN /bin/bash -c " \
       sudo ln -s /opt/rocm/mivisionx/include/VX /usr/include; \
       sudo ln -s /opt/rocm/mivisionx/lib/libvx_opencv.so /usr/lib; \
       sudo ln -s /opt/rocm/mivisionx/lib/libvx_opencv.so /usr/lib/x86_64-linux-gnu"
+      
+############################################################
+############# Install RGBDSLAMv2-MIVisionX #################
+############################################################
+
+RUN /bin/bash -c " \
+   # Clone and build RGBDSLAMv2-MIVisionX
+   cd ~; \
+   mkdir -p catkin_ws/src; \
+   cd catkin_ws/src; \
+   git clone https://github.com/ICURO-AI-LAB/RGBDSLAMv2-MIVisionX.git; \
+   cd ..; \
+   catkin_make"
