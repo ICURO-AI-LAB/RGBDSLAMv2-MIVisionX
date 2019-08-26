@@ -44,12 +44,12 @@ source catkin_ws/devel/setup.bash
 roslaunch rgbdslam rgbdslam.launch
 ```
 ## Sample ROS bags
-Sample ROS bags for quickly testing the install can be found [here](https://vision.in.tum.de/data/datasets/rgbd-dataset/download)
+Sample ROS bags for quickly testing the installation can be found [here](https://vision.in.tum.de/data/datasets/rgbd-dataset/download)
 
 ## Docker:
-Scripts for building and running a docker image is provided in this directory. This can be used to easily install RGBDSLAM_v2 without dependency issues.
+Scripts for building and running a docker image is provided in this directory. This can be used to easily install RGBDSLAMv2 without dependency issues.
 
-* Dockerfile.rgbdslam builds an image with all the prerequisites installed
+Dockerfile.rgbdslam builds an image with all the prerequisites installed. Follow the instructions below to install RGBDSLAMv2 in the docker image
 * Build the docker image
 ```bash
 cd catkin_ws/src/rgbdslam_mivisionx/docker
