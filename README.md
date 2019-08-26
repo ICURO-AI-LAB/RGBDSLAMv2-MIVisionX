@@ -49,7 +49,16 @@ Sample ROS bags for quickly testing the installation can be found [here](https:/
 ## Docker:
 Scripts for building and running a docker image is provided in this directory. This can be used to easily install RGBDSLAMv2 without dependency issues.
 
+### Prerequisites to build the docker image:
+* [Ubuntu 16.04](http://releases.ubuntu.com/16.04/)/[Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
+* [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+* [Radeon Open Compute (ROCm)](https://rocm.github.io/ROCmInstall.html)
+
 Dockerfile.rgbdslam builds an image with all the prerequisites installed. Follow the instructions below to install RGBDSLAMv2 in the docker image
+
+#### *If you are running Ubuntu 18.04, uncomment lines 115-118 in rgbdslamv2_mivisionx/docker/Dockerfile.rgbdslam*
+#### *If you are running Ubuntu 16.04, uncomment lines 121-125 in rgbdslamv2_mivisionx/docker/Dockerfile.rgbdslam*
+
 * Build the docker image
 ```bash
 cd catkin_ws/src/rgbdslam_mivisionx/docker
