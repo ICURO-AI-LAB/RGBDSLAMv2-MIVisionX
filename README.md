@@ -2,7 +2,7 @@
 
 This is an implementation of [RGBDSLAM_V2](https://github.com/felixendres/rgbdslam_v2) that utilizes AMD MIVisionX for feature detection and ROCm OpenCL for offloading computations to Radeon GPUs.
 
-## Prerequisites:
+## Prerequisites
 
 ### Linux
 
@@ -46,7 +46,7 @@ roslaunch rgbdslam rgbdslam.launch
 ## Sample ROS bags
 Sample ROS bags for quickly testing the installation can be found [here](https://vision.in.tum.de/data/datasets/rgbd-dataset/download)
 
-## Docker:
+## Docker
 Scripts for building and running a docker image is provided in this directory. This can be used to easily install RGBDSLAMv2 without dependency issues.
 
 ### Prerequisites to build the docker image:
