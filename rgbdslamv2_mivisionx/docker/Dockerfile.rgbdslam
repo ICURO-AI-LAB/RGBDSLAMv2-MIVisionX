@@ -175,7 +175,7 @@ RUN sudo /bin/bash -c " \
        mkdir build; \
        cd build; \
        cmake ../; \
-       make -j1; \
+       make -j32; \
        sudo make install; \
        sudo ldconfig"
 
@@ -255,3 +255,18 @@ RUN /bin/bash -c " \
       sudo ln -s /opt/rocm/mivisionx/include/VX /usr/include; \
       sudo ln -s /opt/rocm/mivisionx/lib/libvx_opencv.so /usr/lib; \
       sudo ln -s /opt/rocm/mivisionx/lib/libvx_opencv.so /usr/lib/x86_64-linux-gnu"
+
+############################################################
+################# Install RGBDSLAMv2 #######################
+############################################################
+
+RUN /bin/bash -c " \
+      source ~/.bashrc; \
+      source /opt/ros/kinetic/setup.bash; \
+      cd ~; \
+      mkdir -p catkin_ws/src; \
+      cd catkin_ws/src; \
+      git clone https://github.com/ICURO-AI-LAB/RGBDSLAMv2-MIVisionX.git; \
+      cd ..; \
+      export OpenCV_DIR=~/opencv/build/; \
+      catkin_make"

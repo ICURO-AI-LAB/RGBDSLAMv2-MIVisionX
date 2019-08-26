@@ -22,4 +22,4 @@ docker run \
     --device=/dev/kfd \
     --device=/dev/dri \
     --group-add video \
-    mivisionx_rgbdslamv2
+    rgbdslamv2mivisionx
