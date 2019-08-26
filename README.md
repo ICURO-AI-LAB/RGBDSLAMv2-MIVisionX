@@ -22,6 +22,7 @@ Follow the steps in [INSTRUCTIONS_PREREQUISITES.md](INSTRUCTIONS_PREREQUISITES.m
 After installing the prerequisites, use these instructions to install and run RGBDSLAM_v2.
 
 * Make a catkin workspace and clone this repo inside the source folder of the workspace
+* Set the environment variable *OpenCV_DIR* to *</path/to/opencv/build>*
 * Use catkin_make to build
 
 ```bash
@@ -29,6 +30,7 @@ mkdir -p catkin_ws/src
 cd catkin_ws/src
 git clone https://github.com/ICURO-AI-LAB/RGBDSLAMv2-MIVisionX.git
 cd ..
+export OpenCV_DIR=</path/to/opencv/build>
 catkin_make
 ```
 
