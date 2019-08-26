@@ -64,14 +64,14 @@ Dockerfile.rgbdslam builds an image with all the prerequisites installed. Follow
 
 * Build the docker image
 ```bash
-cd catkin_ws/src/rgbdslam_mivisionx/docker
+cd RGBDSLAMv2-MIVisionX/docker/
 ./build
 ```
 This builds a docker image called __rgbdslamv2mivisionx__
 
 * Run the image as a container
 ```bash
-cd catkin_ws/src/rgbdslam_mivisionx/docker
+cd RGBDSLAMv2-MIVisionX/docker/
 ./run
 ```
 
