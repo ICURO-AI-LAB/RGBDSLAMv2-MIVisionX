@@ -50,22 +50,23 @@ Sample ROS bags for quickly testing the install can be found [here](https://visi
 Scripts for building and running a docker image is provided in this directory. This can be used to easily install RGBDSLAM_v2 without dependency issues.
 
 * Dockerfile.rgbdslam builds an image with all the prerequisites installed
-* Build
+* Build the docker image
 ```bash
 cd catkin_ws/src/rgbdslam_mivisionx/docker
 ./build
 ```
 
-* Run
+* Run the image as a container
 ```bash
 cd catkin_ws/src/rgbdslam_mivisionx/docker
 ./run
 ```
 
-* Build rgbdslamv2_mivisionx in docker container
+* Build RGBDSLAMv2-MIVisionX in container
 ```
-cd ~;
-git clone https://github.com/GPUOpen-ProfessionalCompute-Libraries/MIVisionX.git;
-cd MIVisionX/apps/rgbdslam_v2;
-catkin_make;
+mkdir -p catkin_ws/src
+cd catkin_ws/src
+git clone https://github.com/ICURO-AI-LAB/RGBDSLAMv2-MIVisionX.git
+cd ..
+catkin_make
 ```
