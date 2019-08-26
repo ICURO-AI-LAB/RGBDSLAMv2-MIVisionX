@@ -58,8 +58,8 @@ Scripts for building and running a docker image is provided in this directory. T
 
 Dockerfile.rgbdslam builds an image with all the prerequisites installed. Follow the instructions below to install RGBDSLAMv2 in the docker image
 
-**Note 1:** *If you are running Ubuntu 18.04, uncomment lines 115-118 in rgbdslamv2_mivisionx/docker/Dockerfile.rgbdslam*
-**Note 2:** *If you are running Ubuntu 16.04, uncomment lines 121-125 in rgbdslamv2_mivisionx/docker/Dockerfile.rgbdslam*
+**Note 1:** *If you are running Ubuntu 18.04, uncomment lines 115-118 in RGBDSLAMv2-MIVisionX/docker/Dockerfile.rgbdslam*
+**Note 2:** *If you are running Ubuntu 16.04, uncomment lines 121-125 in RGBDSLAMv2-MIVisionX/docker/Dockerfile.rgbdslam*
 **Note 3:** *Building the docker image might take a long time as PCL 1.8 is set to be built using -j1. This can be made faster if desired, but is not recommended as the process takes a large amount of memory.*
 
 * Build the docker image
