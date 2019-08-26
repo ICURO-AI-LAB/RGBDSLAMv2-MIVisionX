@@ -112,17 +112,17 @@ RUN /bin/bash -c " \
    # Use this to get the Profile ID: gsettings get org.gnome.Terminal.ProfilesList default
    
    # Uncomment the following lines if you are running Ubuntu 18.04
-   echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
-   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ use-theme-colors false\" >> ~/.bashrc; \
-   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ background-color 'rgb(35,10,48)'\" >> ~/.bashrc; \
-   echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ foreground-color 'rgb(255,255,255)'\" >> ~/.bashrc"
+   # echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
+   # echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ use-theme-colors false\" >> ~/.bashrc; \
+   # echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ background-color 'rgb(35,10,48)'\" >> ~/.bashrc; \
+   # echo \"gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ foreground-color 'rgb(255,255,255)'\" >> ~/.bashrc"
    
    # Uncomment the following lines if you are running Ubuntu 16.04
-   # echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
-   # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_background\" --type bool false; \
-   # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_colors\" --type bool false; \
-   # gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string \"#FFFFFF\"; \
-   # gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/background_color\" --type string \"#230A30\""
+   echo \"gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false\" >> ~/.bashrc; \
+   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_background\" --type bool false; \
+   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/use_theme_colors\" --type bool false; \
+   gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string \"#FFFFFF\"; \
+   gconftool-2 --set \"/apps/gnome-terminal/profiles/Default/background_color\" --type string \"#230A30\""
    
 ############################################################
 ##################### Install ROS ##########################
