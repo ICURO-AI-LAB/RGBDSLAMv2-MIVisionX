@@ -35,7 +35,7 @@ catkin_make
 ```
 
 ## Running RGBDSLAM_v2
-* ROSbag
+* Pre-recorded data from a ROSBag
 ```
 source catkin_ws/devel/setup.bash
 roslaunch rgbdslam test_settings.launch bagfile_name:=<path/to/rosbag>
@@ -45,6 +45,14 @@ roslaunch rgbdslam test_settings.launch bagfile_name:=<path/to/rosbag>
 source catkin_ws/devel/setup.bash
 roslaunch rgbdslam rgbdslam.launch
 ```
+
+### Input ROS Topics
+* Camera Info: */camera/rgb/camera_info*
+* RGB Image  : */camera/rgb/image_color*
+* Depth Image: */camera/depth/image*
+
+The camera driver must be run using a separate ROS package. For example, Microsoft Kinect One (Kinect v2) can be run using [https://github.com/code-iai/iai_kinect2](https://github.com/code-iai/iai_kinect2). Once the driver is running, the topics have to be [relayed](http://wiki.ros.org/topic_tools/relay) appropriately.
+
 ## Sample ROS bags
 Sample ROS bags for quickly testing the installation can be found [here](https://vision.in.tum.de/data/datasets/rgbd-dataset/download)
 
