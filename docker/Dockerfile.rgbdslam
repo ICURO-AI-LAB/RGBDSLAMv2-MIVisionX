@@ -175,7 +175,7 @@ RUN sudo /bin/bash -c " \
        mkdir build; \
        cd build; \
        cmake ../; \
-       make -j32; \
+       make -j1; \
        sudo make install; \
        sudo ldconfig"
 
